@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hadiah Spesial Untukmu 💝</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <script>
+    /* ====================================================
+       KONFIGURASI UTAMA — EDIT DI SINI
+       ==================================================== */
+    const KONFIG = {
+      posisiFotoHero: "center center",  // foto wajah di tengah
+      posisiFotoHero: "center top",     // foto wajah di atas
+      posisiFotoHero: "center 20%",     // geser 20% dari atas
+      posisiFotoHero: "50% 30%",        // fine-tune bebas
+      namaPenerima: "Wishing,you endless happiness,success,and beautiful moments ahead",
+      judulWebsite: "Happy Birthday! 🎂",
+      isiSurat: `Hai, happy birthday yaaa 💝,
+Hari ini pasti spesial banget buat kamu karna ada akuuu.
+Makasih ya udah lahir di dunia iniiii
+semoga hal baik slalu beriringan denganmu ya sayanggg.
+terus tumbuh, melangkah maju, dan raih impian-impian kamuu. aku akan ngeliat kamu berproses terusss dari jarak yang paling jauh ataupun deket, jadi saksi dari setiap perjuangan kamu untuk pencapaianmu.
+walaupun mungkin ga slalu hadir di dekat kamu, aku akan slalu mendukung kamu dengan doa dan harapan terbaikkk. ketika kamu merasa lelah atau ragu, ingat yaa bahwa ada seseorang yang slalu percaya ke kamuu, yang slalu bangga dengan setiap langkah kamuu, baik itu besar maupun kecil.
+aku akan slalu menjadi orang yang paling bangga dengan setiap proseskamuu, dengan setiap keberhasilan atau kegagalan kamu. karena bagi aku, melihat kamu berusaha dan tumbuh adalah kebahagiaan tersendirii. teruslah melangkah, aku slalu mendukungmu, meski dari manapunnn.
+Jaga kesehatan ya cantikk dimanapun ituuu
+Disudut manapun ragamu berkelana untaian doaku senantiasa mengitarimu anjaayy
+u inspire me to be better, to try a little harder and to believe myself more. I hope u know how meaningful and important u are in this world sayangg
+semoga aku bisa nemenin kamu di ulang tahun yang akan datang di tahun berikutnya ya sayang.
+love you forever 💖
+`,
+
+      pesanPenutup: "Terima kasih sudah hadir dan mewarnai hidup ini. Semoga hari ini dan setiap hari setelahnya penuh keindahan ya!!! 🌸✨",
+
+      idVideoYouTube: "tGv7CUutzqU",
+
+      // Posisi foto hero: "center top" / "center center" / "center bottom" / "50% 20%" dll
+      posisiFotoHero: "center center",
+
+      timeline: [
+        {
+          tahun: "Chapter 1",
+          judul: "Jadi Tukang Parkir",
+          deskripsi: "Kayanya anting ga cerita deh ke lumer(ternyata cerita jir)",
+          gambar: "assets/images/timeline1.jpg"
+        },
+        {
+          tahun: "Chapter 2",
+          judul: "Remang-Remang",
+          deskripsi: "Tempatnya KSB banget tuuuu",
+          gambar: "assets/images/timeline2.jpg"
+        },
+        {
+          tahun: "Chapter 3",
+          judul: "Udah Senderan Aja nichhh",
+          deskripsi: "Kamu pasti sengaja ikut-ikut biru biar couple kan xixixi",
+          gambar: "assets/images/timeline3.jpg"
+        },
+        {
+          tahun: "Chapter 4",
+          judul: "Maaf Malah Beli Soda",
+          deskripsi: "Saya ingin mengucapkan maaf karna tidak tahu kamu gabisa minum soda:()",
+          gambar: "assets/images/timeline4.jpg"
+        }
+      ]
+    };
+  </script>
+</head>
+<body>
+
+  <!-- ===== LOADING SCREEN ===== -->
+  <div id="loadingScreen" class="loading-screen" aria-label="Layar loading">
+    <div class="loading-inner">
+      <div class="loading-flowers">
+        <span class="flower" style="--d:0s">🌸</span>
+        <span class="flower" style="--d:.2s">🌺</span>
+        <span class="flower" style="--d:.4s">🌷</span>
+        <span class="flower" style="--d:.6s">🌸</span>
+        <span class="flower" style="--d:.8s">🌺</span>
+      </div>
+      <div class="loading-spinner"></div>
+      <p class="loading-text">Sedang menyiapkan kenangan indah...</p>
+      <div class="loading-bar-wrap">
+        <div class="loading-bar" id="loadingBar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== WELCOME SCREEN ===== -->
+  <div id="welcomeScreen" class="welcome-screen hidden" aria-label="Layar sambutan">
+    <div class="floating-hearts-bg" id="floatingHeartsBg" aria-hidden="true"></div>
+    <div class="welcome-card glassmorphism">
+      <div class="welcome-icon">💝</div>
+      <h1 class="welcome-title">Seseorang Punya<br/>Hadiah Spesial Untukmu</h1>
+      <p class="welcome-subtitle">Klik tombol di bawah untuk membuka hadiah istimewamu ✨</p>
+      <button id="bukaHadiahBtn" class="btn-utama" onclick="bukaHadiah()">
+        Buka Hadiah 🎀
+      </button>
+    </div>
+  </div>
+
+  <!-- ===== KONTEN UTAMA ===== -->
+  <div id="kontenUtama" class="hidden" aria-label="Konten utama">
+
+    <!-- Navigasi -->
+    <nav id="navbar" class="navbar" role="navigation" aria-label="Navigasi utama">
+      <div class="nav-brand">💝 HBD ALYA</div>
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#hero" onclick="tutupMenu()">Beranda</a></li>
+        <li><a href="#musik" onclick="tutupMenu()">Musik</a></li>
+        <li><a href="#galeri" onclick="tutupMenu()">Galeri</a></li>
+        <li><a href="#timeline" onclick="tutupMenu()">Kenangan</a></li>
+        <li><a href="#surat" onclick="tutupMenu()">Surat</a></li>
+        <li><a href="#penutup" onclick="tutupMenu()">Penutup</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section" aria-label="Bagian hero">
+      <div class="hero-bg" id="heroBg" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="floating-particles" id="heroParticles" aria-hidden="true"></div>
+      <div class="hero-content reveal-up">
+        <div class="hero-badge">✨ Hari Spesialmu ✨</div>
+        <h1 class="hero-judul" id="heroJudul"></h1>
+        <p class="hero-nama" id="heroNama"></p>
+        <div class="hero-dekorasi">🌸 🎂 🌸</div>
+        <a href="#musik" class="btn-scroll">
+          <span>Lihat Lebih</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- MUSIK SECTION -->
+    <section id="musik" class="musik-section section-padding" aria-label="Bagian musik">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">🎵 Musik Buat Kamu</span>
+          <h2 class="section-title">Lagu Spesial Hari Ini</h2>
+          <p class="section-sub">Sebuah melodi yang dipersembahkan khusus untukmu 🎶</p>
+        </div>
+        <div class="musik-card glassmorphism reveal-up" id="musikCard">
+          <!-- Diisi oleh JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERI SECTION -->
+    <section id="galeri" class="galeri-section section-padding" aria-label="Bagian galeri foto">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">Kamu</span>
+          <h2 class="section-title">Gallery of You</h2>
+          <p class="section-sub">You are beautiful beyond words 💕</p>
+        </div>
+        <div class="galeri-grid" id="galeriGrid">
+          <!-- Diisi oleh JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE SECTION -->
+    <section id="timeline" class="timeline-section section-padding" aria-label="Bagian perjalanan waktu">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">⏰ NGEPUNK BARENG</span>
+          <h2 class="section-title">Fotonya ga BLUR hubungannya BLUR</h2>
+          <p class="section-sub">STAY HAPPY,STAY HEALTHY,STAY SAFE,STAY WITH MEEEE✨</p>
+        </div>
+        <div class="timeline-wrap" id="timelineWrap">
+          <!-- Diisi oleh JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SURAT SECTION -->
+    <section id="surat" class="surat-section section-padding" aria-label="Bagian surat">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">💌 Surat Buat Kamu</span>
+          <h2 class="section-title">Jangan di baca alay</h2>
+          <p class="section-sub">Kata-kata hari ini 🌸</p>
+        </div>
+        <div class="surat-card glassmorphism reveal-up">
+          <div class="surat-dekorasi-atas" aria-hidden="true">💌</div>
+          <div class="surat-isi" id="suratIsi"></div>
+          <div class="surat-dekorasi-bawah" aria-hidden="true">— 💖 —</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PENUTUP SECTION -->
+    <section id="penutup" class="penutup-section section-padding" aria-label="Bagian penutup">
+      <div class="container">
+        <div class="penutup-card glassmorphism reveal-up">
+          <div class="penutup-ikon" aria-hidden="true">🌸</div>
+          <p class="penutup-pesan" id="penutupPesan"></p>
+          <div class="penutup-dekorasi" aria-hidden="true">
+            <span>🌸</span><span>💖</span><span>✨</span><span>🎂</span><span>✨</span><span>💖</span><span>🌸</span>
+          </div>
+          <button id="btnRayakan" class="btn-rayakan" onclick="tampilkanPopupUlangTahun()">
+            Rayakan 🎉
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+      <p>Dibuat dengan 💖 penuh cinta untukmu</p>
+      <p class="footer-sub">Semoga harimu selalu indah 🌸</p>
+    </footer>
+
+  </div><!-- /#kontenUtama -->
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-label="Tampilan foto penuh" onclick="tutupLightbox(event)">
+    <button class="lightbox-close" onclick="tutupLightbox()" aria-label="Tutup lightbox">&times;</button>
+    <div class="lightbox-inner">
+      <img id="lightboxGambar" src="" alt="Foto kenangan" />
+      <p id="lightboxKeterangan" class="lightbox-ket"></p>
+    </div>
+  </div>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button id="backToTop" class="back-to-top hidden" onclick="scrollKeAtas()" aria-label="Kembali ke atas">
+    ↑
+  </button>
+
+  <!-- ===== POPUP PERAYAAN ===== -->
+  <div id="popupPerayaan" class="popup-perayaan hidden" role="alert" aria-live="polite" aria-label="Popup perayaan ulang tahun">
+    <div class="popup-inner">
+      <div class="popup-emoji-baris" id="popupEmoji" aria-hidden="true"></div>
+      <h2 class="popup-judul">HAPPY BIRTHDAY 🎉</h2>
+      <p class="popup-sub">Semoga hari ini dan seterusnya penuh kebahagiaan 💖</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
