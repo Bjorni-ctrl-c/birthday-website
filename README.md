@@ -1,6 +1,6 @@
 # 🎂 Birthday Website — Pink Aesthetic Premium
 
-Website ulang tahun interaktif yang dibuat dengan HTML5, CSS3, dan Vanilla JavaScript. Sepenuhnya statis dan siap di-deploy ke GitHub Pages.
+Website ulang tahun interaktif yang dibuat dengan HTML5, CSS3, dan Vanilla JavaScript. Sepenuhnya statis.
 
 ---
 
