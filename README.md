@@ -132,4 +132,3 @@ const KONFIG = {
 
 ---
 
-Dibuat dengan 💖 penuh cinta. Semoga hari ulang tahunnya selalu dikenang indah! 🌸
